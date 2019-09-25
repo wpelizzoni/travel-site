@@ -84,7 +84,7 @@ body {
     background-position: relative;
     background-repeat: no-repeat top left fixed ;
     background-size: cover;
-    height: 100vh;
+    height: 95vh;
     min-height: 360px;
     top: 0;
     left: 0;
@@ -254,4 +254,52 @@ body {
 
 .display-inline {
     display: inline !important;
+}
+
+footer {
+    background: url("../images/footer-background3.gif");;
+    display: inline-block;
+    color: #219dcd;
+    min-height: 10px;
+    margin: 0 0 0 0;
+    padding: 0px 0px 0px 0px;
+    font-family: Roboto, san-serif;
+    letter-spacing: 1px;
+    position: relative;
+    background-size: 100% 100%; 
+    z-index: 1;
+    width: 100vw;
+    top: 0;
+    left: -15px;
+    right: -15px;
+}
+
+
+
+#footer-details {
+    padding: 0px;
+    /* add padding to the top, bottom, left and right */
+}
+
+.social-links li a i {
+    width: 10px;
+    height: 10px;
+    padding: 12px 0 0 0px;
+    font-size: 18px;
+    line-height: 7px;
+    text-align: center;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    border: 0px !important;
+}
+
+.social-links li a i:hover {
+    color: black;
+}
+
+.footer-icon {
+    font-size: 26px;
+    color: #e67e22;
 }

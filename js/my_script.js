@@ -22,7 +22,7 @@ $(document).ready(function() {
     $("#button_effects9").click(function() {
         $("#card1").toggleClass("display-none");    
         $("#card2").toggleClass("display-inline"); 
-        $(this).text($(this).text() == 'Return' ? 'Specials' : 'Return');
+        $(this).text($(this).text() == 'Back' ? 'Specials' : 'Back');
     });
         
    
