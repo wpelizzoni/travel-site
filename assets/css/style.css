@@ -66,13 +66,13 @@ body {
     text-decoration: none;
 }
 
-.btn--features--red {
+.btn--features--wide {
     background-color: transparent;
     font-weight: bold;
     height: 35px;
-    color: red;
+    color: yellow;
     border: solid;
-    border-color: red;
+    border-color: yellow;
     border-radius: 23px;
     width: 150px;
     text-align: center;
@@ -272,6 +272,7 @@ footer {
     top: 0;
     left: -15px;
     right: -15px;
+    border: 0px !important;
 }
 
 
@@ -302,4 +303,20 @@ footer {
 .footer-icon {
     font-size: 26px;
     color: #e67e22;
+}
+
+.par-class {
+    border: 2px ;
+    background: #f2ecd9;
+    top: 150px;
+    margin-left: 200px;
+    margin-right: 20px;
+    position: absolute;
+    z-index: 1;
+}
+
+.legal-btn {
+    border: 0px !important;
+    background: transparent;
+    color: #0080ff;
 }
