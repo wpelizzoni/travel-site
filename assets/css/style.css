@@ -1,5 +1,10 @@
-body {
+html, body {
     font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  
 }
 
 .navalert-container {
@@ -86,6 +91,7 @@ body {
     background-size: cover;
     height: 95vh;
     min-height: 360px;
+    width: 100vw;
     top: 0;
     left: 0;
     -webkit-background-size: cover;	/* works on WebKit browsers */
@@ -99,12 +105,13 @@ body {
 }
 
 .header-desktop-row-page2 {
-    background: url("../images/antarctica.jpg");
+    background: url("../images/antarctica.jpg"); 
     background-position: relative;
     background-repeat: no-repeat top left fixed ;
     background-size: cover;
     height: 100vh;
     min-height: 360px;
+    width: 100vw;
     top: 0;
     left: 0;
     -webkit-background-size: cover;	/* works on WebKit browsers */
@@ -257,7 +264,7 @@ body {
 }
 
 footer {
-    background: url("../images/footer-background3.gif");;
+   background: url("../images/footer-background3.gif"); 
     display: inline-block;
     color: #219dcd;
     min-height: 10px;
@@ -310,7 +317,7 @@ footer {
     background: #f2ecd9;
     top: 150px;
     margin-left: 200px;
-    margin-right: 20px;
+    margin-right: 20px; 
     position: absolute;
     z-index: 1;
 }
@@ -320,3 +327,15 @@ footer {
     background: transparent;
     color: #0080ff;
 }
+
+#map {
+    height: 100%;
+
+}
+
+.jumbotron {
+    position: relative;
+    background: rgba(224, 224, 224, 0.5); /* (0, 151, 19, 0.2); */
+    border-radius: 0.3rem;
+}
+
