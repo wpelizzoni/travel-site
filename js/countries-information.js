@@ -53,8 +53,9 @@ function fetchCountriesInformation (event) {
                     }
     
         });
+        /*
     $.when(
-        $.getJSON(`https://api.darksky.net/forecast/6578058fe5a4c0568f4174d237774847/${latitude}${","},${longitude}`)
+        $.getJSON(`https://api.darksky.net/forecast/6578058fe5a4c0568f4174d237774847/${latitude}${","}${longitude}`)
     ).then(
         function(forecast) {
             $("#gh-user-data").html(weatherInformationHTML(forecast));
@@ -64,7 +65,7 @@ function fetchCountriesInformation (event) {
                         `<h2>Error: ${error.responseJSON.message}</h2>`);
                     }
         );
-   
+   */
 }
  
 
