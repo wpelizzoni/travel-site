@@ -1,5 +1,5 @@
-let latitude = "";
-let longitude = "";
+let latitude = 51;
+let longitude = 9;
 
 /* An event occurs when the user enters a name into the form.  Get the name entered and 
 use it to gather the corresponding user profile from GitHub. Results are returned in a 
@@ -32,6 +32,8 @@ function fetchCountriesInformation (event) {
             var userData = firstResponse[0];
             latitude = userData.latlng[0];
             longitude = userData.latlng[1];
+            console.log (userData.latlng[0]);
+            console.log (userData.latlng[1]);
             
             /* Select the gh-user-data <div> and set the results to another function called countryInformationHTML */
             $("#gh-user-data").html(countryInformationHTML(userData));
@@ -53,20 +55,19 @@ function fetchCountriesInformation (event) {
                     }
     
         });
-        $("#gh-user-data").html(initMap);
-        /*
+       
+       /* 
     $.when(
         $.getJSON(`https://api.darksky.net/forecast/6578058fe5a4c0568f4174d237774847/${latitude}${","}${longitude}`)
     ).then(
         function(forecast) {
             $("#gh-user-data").html(weatherInformationHTML(forecast));
-            $("#gh-user-data").html(initMap);
                 }, function(error) {
                     $("#gh-user-data").html(
                         `<h2>Error: ${error.responseJSON.message}</h2>`);
                     }
         );
-   */
+*/
 }
  
 
@@ -105,11 +106,11 @@ function countryWeatherHTML(forecast) {
 function initMap() {
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 3,
-                center: {lat: latitude, lng: longitude}
+                center: {lat: -34.397, lng: 150.644} 
                 
                 });
         
-        }
+}
 
 /* Execute fetchGitHubInformation automatically as soon as the DOM is fully loaded (which 
 displays the default user profile */

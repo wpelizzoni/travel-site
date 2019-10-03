@@ -416,3 +416,7 @@ footer {
   margin-bottom: 15px;
 }
 
+#map {
+    height=100%;
+}
+
