@@ -53,6 +53,7 @@ function fetchCountriesInformation (event) {
                     }
     
         });
+        $("#gh-user-data").html(initMap);
         /*
     $.when(
         $.getJSON(`https://api.darksky.net/forecast/6578058fe5a4c0568f4174d237774847/${latitude}${","}${longitude}`)
