@@ -297,6 +297,7 @@
     <script type="text/javascript" src="js/my_script.js "></script>
     <script type="text/javascript" src="js/countries-information.js"></script>
     
+  <!-- Commented out and moved to countries-information.js (but without the <script></script> tags
     <script>
         function initMap() {
             var map = new google.maps.Map(document.getElementById("map"), {
@@ -305,13 +306,12 @@
         });
         }
         
-    </script>
+    </script> -->
     
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script> 
     <!-- Async loads the script at the same time the HTML page is loading.  Defer waits until until the page is finished loading before execution.
     initMap will be invoked once we receive the Javascript files.  -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZLxZMzKQUKrXmeiw57tiBnH8GP9AL9oM&callback=initMap"></script>
-    
     
 </body>
 
