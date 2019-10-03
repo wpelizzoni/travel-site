@@ -20,14 +20,16 @@ function fetchCountriesInformation (event) {
         <img src="assets/css/loader.gif" alt="loading... />
         </div>`);
         
+   
+        
     /* When the user name is entered, use it as a parameter to the getJSON function to retrieve
     the profile from github. */ 
-     $.when(
+    $.when(
         $.getJSON(`https://restcountries.eu/rest/v2/name/${countryname}`)
-        
     ).then(
         function(firstResponse) {
             var userData = firstResponse[0];
+            
             /* Select the gh-user-data <div> and set the results to another function called countryInformationHTML */
             $("#gh-user-data").html(countryInformationHTML(userData));
             
@@ -46,14 +48,20 @@ function fetchCountriesInformation (event) {
                         $("#gh-user-data").html(
                             `<h2>Error: ${errorResponse.responseJSON.message}</h2>`);
                     }
-                var url = 'https://api.darksky.net/forecast/6578058fe5a4c0568f4174d237774847/' + userData.latlng[0,1];
-                console.log(url);
-                $.getJSON(url, function(forecast) {
-                    console.log(forecast);
-                    $("#gh-weather-data").html(countryWeatherHTML(forecast));
-                });
-                
-                });
+                    
+        });
+        
+    $.when(
+        $.getJSON(`https://api.darksky.net/forecast/6578058fe5a4c0568f4174d237774847/${userData.latlng[0]}${","}${userData.latlng[1]}`)
+        ).then(
+        function(secondResponse) {
+            var forecast = secondResponse[0];
+            $("#gh-user-data").html(countryWeatherHTML(forecast));  
+        }, function(error) {
+            $("#gh-user-data").html(
+                `<h2>Error: ${error.responseJSON.message}</h2>`);
+            }
+        ); 
 }
  
 
@@ -66,6 +74,7 @@ function countryInformationHTML(user) {
             <div class="gh-avatar">
                 <img src="https://www.countryflags.io/${user.alpha2Code}/flat/64.png" width="120" height="120" alt="${user.capital}" />
             <div> 
+            
                 <p>Capital: ${user.capital} &nbsp;&nbsp;&nbsp Population: ${user.population} <br>
                 Region: ${user.region} &nbsp;&nbsp;&nbsp Languages: ${user.languages[0].name} <br>
                 Currencies: ${user.currencies[0].symbol} &nbsp;&nbsp;&nbsp Lat/Lng: ${user.latlng} &nbsp;&nbsp;&nbsp <br>
@@ -83,8 +92,9 @@ function countryInformationHTML(user) {
 
 function countryWeatherHTML(forecast) {
     return `
-        <h2>${forecast.daily.summary} </h2>`;
-    
+        <div class="gh-content">
+              <h2>Forecast: ${forecast.daily.data[0].summary} </h2>
+        </div>`;
 }
 
 /* Execute fetchGitHubInformation automatically as soon as the DOM is fully loaded (which 
