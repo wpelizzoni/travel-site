@@ -120,7 +120,7 @@ html, body {
 /* -----------------------------------Bootstrap Page Row and Column Settings */
 
 .header-desktop-row-page2 {
-    background: url("../images/antarctica.jpg"); 
+   background: url("../images/antarctica.jpg"); 
     background-position: relative;
     background-repeat: no-repeat top left fixed ;
     background-size: cover;
@@ -344,6 +344,8 @@ footer {
     color: black;
 }
 
+/*----------------------------------------------------------------Google Maps */
+
 #map {
     height: 100%;
 
@@ -416,7 +418,4 @@ footer {
   margin-bottom: 15px;
 }
 
-#map {
-    height:100%;
-}
 
