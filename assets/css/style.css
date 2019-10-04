@@ -418,4 +418,6 @@ footer {
   margin-bottom: 15px;
 }
 
-
+#gh-weather-data {
+    color: black;
+}
