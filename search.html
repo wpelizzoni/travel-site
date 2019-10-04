@@ -40,7 +40,7 @@
             </div>
         </div>
         
-        <div id="map"></div>
+        
         
         <div class="jumbotron jumbo-search-desktop">
             <div class="center-form"  style="font-weight: bold; font-size: large; color: #006400">
@@ -49,6 +49,8 @@
                 <div id="gh-user-data"></div>
             </div>
         </div>
+        
+        <div id="map"></div>
         
         <div class="d-block d-md-none">
             <nav class="navbar navbar-expand-sm navbar-dark"> 
@@ -296,14 +298,21 @@
 
     <script type="text/javascript" src="js/jquery-3.4.1.js "></script>
     <script type="text/javascript" src="js/my_script.js "></script>
-    <script type="text/javascript" src="js/countries-information.js"></script>
+   
     
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script> 
+    <!-- Note: The Google Map code has been moved to the .js file.  If it is to be included in this HTMl file, them we must place it between
+    script tags -->
+  
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <!-- Async loads the script at the same time the HTML page is loading.  Defer waits until until the page is finished loading before execution.
     initMap will be invoked once we receive the Javascript files.  -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZLxZMzKQUKrXmeiw57tiBnH8GP9AL9oM&callback=initMap"></script>
+    
+    <!-- Here is an alternate API key -->
     <!--  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhtOtCozmv4vOdkroD2gW7Lv5GRO-4xuU&callback=initMap"></script>  -->
     
+     <script type="text/javascript" src="js/countries-information.js"></script>
+     
 </body>
 
 </html>
