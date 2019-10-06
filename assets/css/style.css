@@ -261,21 +261,22 @@ html, body {
 
 /*--------------------------------------------------Device Size Threshholds */
 
-@media (max-width: 768px) and (min-width: 375px) {
+@media (max-width: 768px) {
     #search {
-        width: 80%;
+        width: 70%;
     }
     .customjumbotron {
         border-radius: 0.3rem;
         text-align: center;
         background: rgba(224, 224, 224, 0.5);
-        top: 0px auto;
+        top: 0px;
         margin-left: 0px auto;
         margin-right: 0px auto; 
         position: absolute;
         z-index: 1;
         font-size: x-small; 
-        width: 50%;
+        font-weight: normal;
+        width: 100vw;
     }
     .custom-center-form {
         padding-top: 0px;
@@ -299,12 +300,15 @@ html, body {
         margin-right: 20px auto; 
         position: absolute;
         z-index: 1;
+        width: 100vw;
+        font-size: large;
+        font-weight: bold;
     }
     .custom-center-form {
         padding-top: 30px;
 	    min-height: 200px;
 	    margin: 0 auto;
-	    max-width: 40%;
+	   
     }
 }
 
@@ -328,6 +332,8 @@ html, body {
         margin-right: 20px auto; 
         position: absolute;
         z-index: 1;
+        font-size: large;
+        font-weight: bold;
     }
     .custom-center-form {
         padding-top: 30px;
