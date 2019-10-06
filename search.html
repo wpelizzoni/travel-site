@@ -39,31 +39,37 @@
             <div class="col-12 header-phones-column">
             </div>
         </div>
-       <!--
-       <div class="d-block d-md-none">
-           <div class="jumbotron jumbo-search-phone"> 
-                <div class="center-form-phone" style="font-weight: bold; font-size: large; color: #006400">
-                    <p><strong>Country - use initials (e.g. USA)</p>
-                    <input type="text" id="gh-username" value="Germany" oninput="fetchCountriesInformation()" />
-                <div id="gh-user-data"></div>
-                </div>
-          </div>  
-        </div>
+        
+        <!-- We cannot define identical input areas but for different screen sizes.  
+        The problem is the the input area is defined for the first jumbotron and cannot
+        be defined again when you change screen sizes.  The trick is to create 
+        different jumbotrons for the desktop and phone without defining the
+        input area twice.  
         -->
        
-            <div class="jumbotron jumbo-search-desktop "> 
+        <div class="jumbotron jumbo-search-desktop d-none d-md-block"> 
             
-                <div class="center-form-desktop"  style="font-weight: bold; font-size: large; color: #006400">
-                    <p><strong>Country - use initials (e.g. USA)</p>
-                    <input type="text" id="rc-countryname" value="Germany" oninput="fetchCountriesInformation()" />
-                <div id="rc-country-data"></div>
+            <div class="center-form-desktop"  style="font-weight: bold; font-size: large; color: #006400">
+                <p><strong>Country - use initials (e.g. USA)</p>
+                <input type="text" id="rc-countryname" value="Germany" oninput="fetchCountriesInformation()" />
+            <div id="rc-country-data"></div>
                 
-                <div id='loader' style='display:none'> <img src="assets/css/loader.gif" alt="loading..." /></div>
+            <div id='loader' style='display:none'> <img src="assets/css/loader.gif" alt="loading..." /></div>
                 
-                </div>
+            </div>
                 
+        </div> 
+            
+        <div class="jumbotron jumbo-search-phone d-block d-md-none">
+            <div class="center-form-phone" style="font-weight: bold; font-size: large; color: #006400">
+                <p><strong>Country - use initials (e.g. USA)</p>
+                <input type="text" id="rc-countryname" value="Germany" oninput="fetchCountriesInformation()" />
+            <div id="rc-country-data"></div>
                 
-            </div> 
+             <div id='loader' style='display:none'> <img src="assets/css/loader.gif" alt="loading..." /></div>
+             
+             </div>  
+        </div>
         
         <div id="map"></div>
         
@@ -312,12 +318,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
 
-/<!--
-    <script type="text/javascript" src="js/jquery.ajax-cross-origin.min.js"></script> -->
     <script type="text/javascript" src="js/jquery-3.4.1.js "></script> 
     <script type="text/javascript" src="js/my_script.js "></script>
     
-  <!--Bootstrap 
+  <!-- 
     <script>
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
