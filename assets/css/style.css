@@ -263,7 +263,7 @@ html, body {
 
 @media (max-width: 768px) {
     #search {
-        width: 70%;
+        width: 80%;
     }
     .customjumbotron {
         border-radius: 0.3rem;
@@ -295,7 +295,7 @@ html, body {
         border-radius: 0.3rem;
         text-align: center;
         background: rgba(224, 224, 224, 0.5);
-        top: 160px;
+        top: 0px;
         margin-left: 80px auto;
         margin-right: 20px auto; 
         position: absolute;
