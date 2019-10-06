@@ -259,11 +259,27 @@ html, body {
   margin: 0 auto;
 }
 
-/*--------------------------------------------------Device Size THreshholds */
+/*--------------------------------------------------Device Size Threshholds */
 
 @media (max-width: 768px) and (min-width: 375px) {
     #search {
         width: 80%;
+    }
+    .customjumbotron {
+        border-radius: 0.3rem;
+        text-align: center;
+        background: rgba(224, 224, 224, 0.5);
+        top: 20px auto;
+        margin-left: 10px auto;
+        margin-right: 10px auto; 
+        position: absolute;
+        z-index: 1;
+        font-size: x-small; 
+    }
+    .custom-center-form {
+        padding-top: 10px;
+	    margin: 0 auto;
+	    max-width: 70%;
     }
 }
 
@@ -272,6 +288,22 @@ html, body {
     .search-section,
     .contact-section {
         background-attachment: scroll;
+    }
+    .customjumbotron{
+        border-radius: 0.3rem;
+        text-align: center;
+        background: rgba(224, 224, 224, 0.5);
+        top: 160px;
+        margin-left: 80px auto;
+        margin-right: 20px auto; 
+        position: absolute;
+        z-index: 1;
+    }
+    .custom-center-form {
+        padding-top: 30px;
+	    min-height: 200px;
+	    margin: 0 auto;
+	    max-width: 40%;
     }
 }
 
@@ -285,6 +317,22 @@ html, body {
         background-position: center;
         background-size: cover;
         width: 100vw;
+    }
+    .customjumbotron {
+        border-radius: 0.3rem;
+        text-align: center;
+        background: rgba(224, 224, 224, 0.5);
+        top: 160px;
+        margin-left: 80px auto;
+        margin-right: 20px auto; 
+        position: absolute;
+        z-index: 1;
+    }
+    .custom-center-form {
+        padding-top: 30px;
+	    min-height: 200px;
+	    margin: 0 auto;
+	    max-width: 40%;
     }
 
 }
