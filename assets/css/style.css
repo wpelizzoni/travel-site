@@ -151,7 +151,7 @@ html, body {
     background-repeat: no-repeat top left fixed ;
     background-size: cover;
     height: 100vh;
-    min-height: 360px;
+    width: 100vw;
     top: 0;
     left: 0;
     color: #ffff00;
@@ -164,10 +164,9 @@ html, body {
 }
 
 .header-phones-column {
-    width: 100%;
-    padding: 0 0px 0px;
-    min-height: 360px;
-    margin: 0 0px 0px;
+    width: 100vw;
+    padding: 0 0 0px 0px;
+    margin: 0 0 0px 0px;
     float: none;
 }
 
@@ -263,25 +262,26 @@ html, body {
 
 @media (max-width: 768px) {
     #search {
-        width: 80%;
+        width: 60%;
     }
     .customjumbotron {
-        border-radius: 0.3rem;
+        border-radius: 0rem;
         text-align: center;
         background: rgba(224, 224, 224, 0.5);
-        top: 0px;
-        margin-left: 0px auto;
+        margin-top: 0px auto;
+        margin-left: -17px;
         margin-right: 0px auto; 
         position: absolute;
         z-index: 1;
         font-size: x-small; 
         font-weight: normal;
-        width: 100vw;
+        width: 70vw;
+        height: 95vh;
     }
     .custom-center-form {
         padding-top: 0px;
 	    margin: 0 auto;
-	    max-width: 70% auto;
+	    max-width: 100% auto;
     }
 }
 
@@ -363,6 +363,7 @@ footer {
     left: -15px;
     right: -15px;
     border: 0px !important;
+    position: relative;
 }
 
 #footer-details {
