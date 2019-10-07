@@ -13,6 +13,7 @@ function fetchCountriesInformation (event) {
     /* Clear the DOM objects so they have no old data in them */
   
     $("rc-country-data").html(""); 
+    $("rc-weather-data").html("");
     
     var countryname = $("#rc-countryname").val();
     if (!countryname) {
@@ -29,7 +30,6 @@ function fetchCountriesInformation (event) {
         <img src="assets/css/loader.gif" alt="loading..." />
         </div>`); 
         */
-    console.log("got here first");
    
     $('#rc-countryname').on('input change keyup paste',function(){
             $('#loader').show();
@@ -58,8 +58,9 @@ function fetchCountriesInformation (event) {
             $.getJSON(_url, function(weather) {
                 capForecast = weather.daily.summary;
                 /* Select the gh-user-data <div> and set the results to another function called countryInformationHTML */
+                $("#rc-avatar-data").html(countryAvatarHTML(countryData));
                 $("#rc-country-data").html(countryInformationHTML(countryData));
-                
+                $("#rc-weather-data").html(countryWeatherHTML(countryData));
                 /*  The alternative to using a global viable for wehater was to call weatherInformationHTML 
                     with a parameter but it didn't work
                     $("#gh-user-data").html(weatherInformationHTML(weather.daily.summary)); */
@@ -88,41 +89,45 @@ function fetchCountriesInformation (event) {
                 });
 }
 
+function countryAvatarHTML(country) {
+    
+    return `
+        
+        <h5>${country.nativeName} </h5>
+        <div class="rc-avatar">
+                <img src="https://www.countryflags.io/${country.alpha2Code}/flat/64.png" width="120" height="120" alt="${country.capital}" />
+            
+        </div>`;
+     
+} 
+
 function countryInformationHTML(country) {
 
     return `
-        <h2>${country.nativeName} </h2>
-    
-        <div class="gh-content">
-            <div class="gh-avatar">
-                <img src="https://www.countryflags.io/${country.alpha2Code}/flat/64.png" width="120" height="120" alt="${country.capital}" />
-            <div> 
+         <div class="rc-content" >
             
-                <p>Capital: ${country.capital} &nbsp;&nbsp;&nbsp Population: ${country.population} <br>
+               <p>Capital: ${country.capital} &nbsp;&nbsp;&nbsp Population: ${country.population} <br>
                 Region: ${country.region} &nbsp;&nbsp;&nbsp Languages: ${country.languages[0].name} <br>
                 Currencies: ${country.currencies[0].symbol} &nbsp;&nbsp;&nbsp Lat/Lng: ${country.latlng} &nbsp;&nbsp;&nbsp <br>
                 
                 <strong>Borders:</strong> 
                 
                 ${country.borders.join(" - ")}
-                <br><br>
-                Weather in ${country.capital}: ${capForecast} <br>
+                <br>
                 </p>
-            
+        
         </div>`;
 }
+/* Weather in ${country.capital}: ${capForecast} <br> */
 
-/*
-function weatherInformationHTML(theForecast) {
-    console.log ("weatherInformationHTML");
+function countryWeatherHTML(country) {
     
     return `
-    <div>
-        <p>Forecast: ${theForecast}<br>
-        Forecast: ${capForecast}</p>
-     </div>`;
+    <div id="rc-weather">
+         Weather in ${country.capital}: ${capForecast} <br>
+    </div>`;
      
-} */
+} 
 
 /* This code is included as an example but it doesn't work */
 function initMap() {
