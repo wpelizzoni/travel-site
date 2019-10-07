@@ -14,7 +14,8 @@
 
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
-    <!--
+    <!-- Jasmine scripts for testing -->
+    
     <script src=”https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/jasmine.js”></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/jasmine-html.js"></script>
     <script src=https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.4.0/boot.js></script>
@@ -22,7 +23,7 @@
     
     <script type="text/javascript" src="scripts/countries-information.js"></script>
     <script type="text/javascript" src="spec/countrySpec.js"></script>
--->
+
 
     <title>Document</title>
 </head>
@@ -40,11 +41,11 @@
             </div>
         </div>
         
-        <!-- We cannot define identical input areas but for different screen sizes.  
+        <!-- Testing proves that we cannot define identical input areas but for different screen sizes.  
         The problem is the the input area is defined for the first jumbotron and cannot
-        be defined again when you change screen sizes.  The trick is to create 
-        different jumbotrons for the desktop and phone without defining the
-        input area twice.  
+        be defined again when you change screen sizes.  The trick is to define customjumbotron
+        settings in media queries to disguish between the jumbotron created for phone screens 
+        and those created for larger screens.    
         -->
        
         <div class="jumbotron customjumbotron"> 
@@ -61,18 +62,6 @@
                 
         </div> 
             
-        <!--
-        <div class="jumbotron jumbo-search-phone d-block d-md-none">
-            <div class="center-form-phone" style="font-weight: bold; font-size: large; color: #006400">
-                <p><strong>Country - use initials (e.g. USA)</strong></p>
-                <input type="text" id="rc-countryname" value="Germany" oninput="fetchCountriesInformation()" />
-                <div id="rc-country-data"></div>
-                
-                 <div id='loader' style='display:none'> <img src="assets/css/loader.gif" alt="loading..." /></div>
-             
-             </div>  
-        </div>
-        -->
         
         <div id="map"></div>
         
@@ -324,7 +313,8 @@
     <script type="text/javascript" src="js/jquery-3.4.1.js "></script> 
     <script type="text/javascript" src="js/my_script.js "></script>
     
-  <!-- 
+  <!-- Google Maps Javascript code belongs in this location when included in the HTml file.
+  This is an example for future reference:
     <script>
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {

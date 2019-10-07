@@ -1,3 +1,4 @@
+/* Global Variables */
 
 let latitude = 51;
 let longitude = 9;
@@ -21,8 +22,6 @@ function fetchCountriesInformation (event) {
         return;
     }
     
-    
-    
     /* Display the loader gif when the user begins entering a name into the form box */
     /* This is the Code Institute source that didn't work
     $("#gh-username").html(
@@ -30,6 +29,8 @@ function fetchCountriesInformation (event) {
         <img src="assets/css/loader.gif" alt="loading..." />
         </div>`); 
         */
+        
+    /* Refer to search.html for the loader div */
    
     $('#rc-countryname').on('input change keyup paste',function(){
             $('#loader').show();
@@ -39,10 +40,10 @@ function fetchCountriesInformation (event) {
             setTimeout(hideLoader, 2 * 1000);
     }); 
 
-    /* When the user name is entered, use it as a parameter to the getJSON function to retrieve
-    the profile from github.  We can use multiple  $.getJSON calls separated by commas to query
-    information from different end points in a web site.  I tried a second $.getJSON call to 
-    a different web site but it didn't work for some reason. */ 
+    /* When the country name is entered, use it as a parameter to the getJSON function to retrieve
+    data from restcountries.us.  We can use multiple  $.getJSON calls separated by commas to query
+    information from different end points in a web site.  Testing showed that a second $.getJSON  
+    call to a different web site didn't work for some reason. */ 
 
     $.when(
         $.getJSON(`https://restcountries.eu/rest/v2/name/${countryname}`)
@@ -52,12 +53,17 @@ function fetchCountriesInformation (event) {
             latitude = countryData.latlng[0];
             longitude = countryData.latlng[1];
             
+            /* This URL has a prefix that overcomes CORS security restrictions.  CORS requires that web based API calls
+            come from a trusted web service such as Heroku when accessing Darksky data. ?excluse= reduces the amount
+            of data we are retrieving primarily for performance reasons.  */
+            
+            
             _url = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/6578058fe5a4c0568f4174d237774847/' + parseInt(latitude, 10) + ',' 
             + parseInt(longitude, 10) + '?exclude=currently,minutely,hourly,alerts,flags';
             
             $.getJSON(_url, function(weather) {
                 capForecast = weather.daily.summary;
-                /* Select the gh-user-data <div> and set the results to another function called countryInformationHTML */
+                /* Select the <div> declared in search.html and get the results from another function */
                 $("#rc-avatar-data").html(countryAvatarHTML(countryData));
                 $("#rc-country-data").html(countryInformationHTML(countryData));
                 $("#rc-weather-data").html(countryWeatherHTML(countryData));
@@ -140,7 +146,7 @@ function initMap() {
 }
 
 
-/* Execute fetchGitHubInformation automatically as soon as the DOM is fully loaded (which 
+/* Execute fetchCountriesInformation automatically as soon as the DOM is fully loaded (which 
 displays the default user profile */
 
 $(document).ready(fetchCountriesInformation)     

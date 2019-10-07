@@ -451,55 +451,9 @@ footer {
     position: relative;
     z-index: 1;
 }
-/*
-.jumbo-search {
-    position: absolute;
-    top: 100px;
-    left: 80px;
-    width: 80px;
-    background: rgba(224, 224, 224, 0.5); /* (0, 151, 19, 0.2); 
-    border-radius: 0.3rem;
-}
-*/
-.jumbo-search-desktop {
-    border-radius: 0.3rem;
-    text-align: center;
-    background: rgba(224, 224, 224, 0.5);
-    top: 160px;
-    margin-left: 80px auto;
-    margin-right: 20px auto; 
-    position: absolute;
-    z-index: 1;
-}
 
-.jumbo-search-phone {
-    border-radius: 0.3rem;
-    text-align: center;
-    background: rgba(224, 224, 224, 0.5);
-    top: 20px auto;
-    margin-left: 10px auto;
-    margin-right: 10px auto; 
-    position: absolute;
-    z-index: 1;
-    font-size: x-small;
-}
-
-
-/*------------------------------------------------------Search Page Text Box */
-
-#rc-countryname {
-  display: block;
-  padding: 5px 8px;
-  font-size: 1.4em;
-  color: #808080;
-  max-width: 550px;
-  margin-bottom: 15px;
-}
-
-#gh-weather-data {
-    color: black;
-}
-
+/*    Look in Media Queries for jumbotron differences per screen size */
+    
 .center-form-desktop {
 	        padding-top: 30px;
 	        min-height: 200px;
@@ -512,6 +466,16 @@ footer {
 	    margin: 0 auto;
 	    max-width: 70%;
 	}
+	
+#rc-countryname {
+  display: block;
+  padding: 5px 8px;
+  font-size: 1.4em;
+  color: #808080;
+  max-width: 550px;
+  margin-bottom: 15px;
+}
 
 
-/*---------------------------------------------GITHUB STUFF FOR TESTING*/
+
+

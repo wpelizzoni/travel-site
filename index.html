@@ -20,6 +20,8 @@
 <body>
     <div class="container-fluid">
 
+        <!-- Set up the basic Bootstrap row and collumn grid -->
+        
         <div class="row header-desktop-row-page1 d-none d-md-block">
             <div class="col-12 header-desktop-column">
             </div>
@@ -29,6 +31,8 @@
             <div class="col-12 header-phones-column">
             </div>
         </div>
+        
+        <!-- Use a hamburger button on small screens -->
 
         <div class="d-block d-md-none">
             <nav class="navbar navbar-expand-sm navbar-dark">
@@ -61,6 +65,8 @@
                 </ul>
             </nav>
         </div>
+        
+        <!-- Define cards for the special deal and check my_script.js for relevant JQuery -->
 
         <div class="specials specials-features-phone d-block d-md-none">
             <p id="par1" class='specials-p'>
@@ -91,6 +97,10 @@
             
             
         </div>
+        
+        <!-- Here we define terms of service and policy for desktops and phones.
+            An alternative would have been to include styles per screen size in 
+            Media Queries -->
         
         <div id="terms-of-service" >
             <div class="jumbotron jumbo-legal-desktop d-none d-md-block">
@@ -253,6 +263,8 @@
             </div>
             
         </footer>
+        
+        <!-- Sign in pop up window -->
     
         <div class="modal" tabindex="-1" role="dialog" id="signinModal">
                 <div class="modal-dialog" role="document">
@@ -299,6 +311,8 @@
         </div>
 
     </div>
+    
+    <!-- include these scripts at the bottom of the code for load performace reasons -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
