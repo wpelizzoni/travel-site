@@ -126,6 +126,8 @@ on simulated devices with various screen sizes, and view the code.
 Functioning code was deployer to GitHub pages at this link 
 [travel-site](http://wpelizzoni.github.io/travel-site/)
 
+< https://wpelizzoni.github.io/travel-site/ >
+
 # Credits
 
 Some Javascript/JQuery concepts and code excerpts used in this project were obtained from 
